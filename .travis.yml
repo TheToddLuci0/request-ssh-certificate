@@ -9,6 +9,8 @@ matrix:
           dist: xenial
         - python: "3.8"
           env: NOXSESSION="tests-3.8"
+        - python: "3.11"
+          env: NOXSESSION="tests-3.11"
         - python: "3.7"
           env: NOXSESSION="lint"
           dist: xenial

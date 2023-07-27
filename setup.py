@@ -30,11 +30,11 @@ setup(
     keywords="request_ssh_certificate",
     name="request_ssh_certificate",
     package_dir={"": "src"},
-    packages=find_packages(
-        include=["src/request_ssh_certificate", "src/request_ssh_certificate.*"]
-    ),
+    # packages=find_packages(
+    #     include=["src/request_ssh_certificate", "src/request_ssh_certificate.*"]
+    # ),
     setup_requires=[],
     url="https://github.com/TheToddLuci0/request_ssh_certificate",
-    version="0.1.0",
+    version="0.1.1",
     zip_safe=False,
 )
