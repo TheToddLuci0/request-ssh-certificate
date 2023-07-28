@@ -5,7 +5,7 @@ from setuptools import setup, find_packages  # type: ignore
 with open("README.md") as readme_file:
     readme = readme_file.read()
 
-exec(open('src/request_ssh_certificate/__init__.py', 'r').read())
+exec(open("src/request_ssh_certificate/__init__.py", "r").read())
 
 setup(
     author="TheToddLuci0",
@@ -23,7 +23,7 @@ setup(
             "request-ssh-certificate=request_ssh_certificate.cli:main",
         ],
     },
-    install_requires=['boto3'],
+    install_requires=["boto3"],
     license="MIT license",
     long_description=readme,
     long_description_content_type="text/markdown",
@@ -37,6 +37,6 @@ setup(
     # ),
     setup_requires=[],
     url="https://github.com/TheToddLuci0/request_ssh_certificate",
-    version=__version__, # type: ignore
+    version=__version__,  # type: ignore
     zip_safe=False,
 )
