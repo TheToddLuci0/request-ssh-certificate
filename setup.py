@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-from setuptools import setup, find_packages  # type: ignore
+from setuptools import setup  # type: ignore
 
 with open("README.md") as readme_file:
     readme = readme_file.read()
@@ -37,6 +37,6 @@ setup(
     # ),
     setup_requires=[],
     url="https://github.com/TheToddLuci0/request_ssh_certificate",
-    version=__version__,  # type: ignore
+    version=__version__,  # noqa: F821 # type: ignore This is pulled on line 8, but the tools can't resolve it
     zip_safe=False,
 )
