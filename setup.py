@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+# mypy: disable-error-code="name-defined"
 
 from setuptools import setup  # type: ignore
 
@@ -37,6 +38,6 @@ setup(
     # ),
     setup_requires=[],
     url="https://github.com/TheToddLuci0/request_ssh_certificate",
-    version=__version__,  # noqa: F821 # type: ignore This is pulled on line 8, but the tools can't resolve it
+    version=__version__,  # noqa: F821 # type: ignore # This is pulled on line 8, but the tools can't resolve it
     zip_safe=False,
 )
