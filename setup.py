@@ -5,6 +5,8 @@ from setuptools import setup, find_packages  # type: ignore
 with open("README.md") as readme_file:
     readme = readme_file.read()
 
+exec(open('src/request_ssh_certificate/__init__.py', 'r').read())
+
 setup(
     author="TheToddLuci0",
     author_email="email@example.com",
@@ -35,6 +37,6 @@ setup(
     # ),
     setup_requires=[],
     url="https://github.com/TheToddLuci0/request_ssh_certificate",
-    version="0.1.1",
+    version=__version__, # type: ignore
     zip_safe=False,
 )
