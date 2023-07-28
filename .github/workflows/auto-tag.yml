@@ -18,5 +18,5 @@ jobs:
 
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          path: src/your_package/__init__.py
+          path: src/request_ssh_certificate/__init__.py
           variable: __version__
