@@ -1,6 +1,7 @@
 import os
 import logging
 import boto3
+import sys
 import json
 
 
@@ -28,9 +29,9 @@ def request(
     cert_file = os.path.expanduser(identity_file).replace(".pub", "-cert.pub")
     if not cert_file.endswith("-cert.pub"):
         logging.error(
-            "Something has gone horribly wrong, bailing to not destroy secret keys!"
+            "Something has gone horribly wrong, bailing to not destroy secret keys!\nDid you accidentily pass a private key?"
         )
-        os.exit(99)
+        sys.exit(99)
     logging.info("Writing cert to " + cert_file)
     with open(cert_file, "w") as f:
         f.write(cert.decode("utf-8").replace('"', ""))

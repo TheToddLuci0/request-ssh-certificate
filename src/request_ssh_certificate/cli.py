@@ -4,6 +4,7 @@ import sys
 import configparser
 import logging
 import os
+import sys
 from request_ssh_certificate.request_ssh_certificate import request
 
 
@@ -37,7 +38,10 @@ def main():
 
     args = parser.parse_args()
     config_path = os.path.expanduser(args.config)
-    config.read(config_path)
+    try:
+        config.read(config_path)
+    except:
+        logging.debug("Config file not present at {}".format(config_path))
     logging.debug(args.__dict__)
     config.read_dict(
         {"DEFAULT": {k: v for k, v in args.__dict__.items() if v is not None}}
@@ -58,7 +62,7 @@ def main():
     profile = conf.get("profile")
     if identity_file is None:
         logging.error("Must have a key to sign!")
-        os.exit(5)
+        sys.exit(5)
     return request(
         profile=profile,
         region=region,
